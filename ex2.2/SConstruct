@@ -52,9 +52,9 @@ par['ntopl1'] = (par['topl1']/par['dz'])
 # par['sx'] = 3000
 par['sx'] = 1000
 par['dsx'] = 10.
-# par['nsx'] = 500
-# par['nsx'] = 1
-par['nsx'] = 250
+par['nsx'] = 500
+#par['nsx'] = 1
+#par['nsx'] = 250
 par['sz'] = 0
 
 
@@ -89,17 +89,15 @@ Flow('Vel_fundo', None,
      smooth rect1=3 repeat=3
      ''' % par)
 
-Flow('top0',None,
+Flow('top0', None,
 	 '''
      spike n1=%(nedge2)g d1=%(dx)g o1=0 mag=%(edge1)g
 	 ''' % par)
-# Flow('mid0','top0',
-# 	 '''
-# 	 math output="input*(1+(x1-%(edge2)g)*%(m)g/%(edge1)g)"
-# 	 ''' % par)
-Flow('mid0', 'top0', '''
-                     math output="%(edge1)g + 500*sin(x1 / 500)"
-                     ''' % par)
+Flow('mid0', 'top0',
+     '''
+	 math output="input*(1+(x1-%(edge2)g)*%(m)g/%(edge1)g)"
+ 	 ''' % par)
+
 Flow('bot0',None,
 	 '''spike n1=%(nedge2)g d1=%(dx)g  mag=4500
 	 ''' % par)
