@@ -1,0 +1,10 @@
+2.0-git	sfspike	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:42 2017
+
+	o1=0
+	label1="Time"
+	data_format="native_float"
+	esize=4
+	in="/var/tmp/docs/ObSis/ex2.2/ss-16.rsf@"
+	unit1="s"
+	d1=0.004
+	n1=2

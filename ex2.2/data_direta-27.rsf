@@ -1,0 +1,78 @@
+2.0-git	sfspike	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:43 2017
+
+	o1=0
+	label1="Time"
+	data_format="native_float"
+	esize=4
+	in="stdout"
+	unit1="s"
+	d1=0.002
+	n1=2000
+	in="stdin"
+
+2.0-git	sfpad	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:43 2017
+
+	end1=2000
+	data_format="native_float"
+	esize=4
+	in="stdout"
+	n1=4000
+	in="stdin"
+
+2.0-git	sfricker1	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:43 2017
+
+	data_format="native_float"
+	esize=4
+	in="stdout"
+	in="stdin"
+
+2.0-git	sfwindow	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:43 2017
+
+	o1=0
+	label1="Time"
+	data_format="native_float"
+	esize=4
+	in="stdout"
+	unit1="s"
+	d1=0.002
+	n1=2000
+	in="stdin"
+
+2.0-git	sfscale	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:43 2017
+
+	data_format="native_float"
+	esize=4
+	in="stdout"
+	in="stdin"
+
+2.0-git	sfput	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:43 2017
+
+	data_format="native_float"
+	in="/var/tmp/docs/ObSis/ex2.2/wav_.rsf@"
+	label1=t
+2.0-git	sftransp	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:43 2017
+
+	d2=0.002
+	n2=2000
+	o2=0
+	data_format="native_float"
+	label2="t"
+	esize=4
+	in="/var/tmp/docs/ObSis/ex2.2/wav.rsf@"
+	unit2="s"
+	n1=1
+2.0-git	sfawefd2d	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:32:54 2017
+
+	d2=0.002
+	n2=2000
+	o1=0
+	o2=0
+	label1="r"
+	data_format="native_float"
+	label2="t"
+	esize=4
+	in="/var/tmp/docs/ObSis/ex2.2/data_direta-27.rsf@"
+	unit1=""
+	unit2="s"
+	d1=10
+	n1=700

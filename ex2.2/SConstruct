@@ -9,7 +9,7 @@ par = {
     'nt':2000,  'ot':0, 'dt':0.002, 'lt':'t', 'ut':'s',
     'kt':60,
     'ompnth':4,
-    'snap':'n',
+    'jsnap':100,
     'nb':200,
     'height':8
 }
@@ -50,11 +50,9 @@ par['ntopl1'] = (par['topl1']/par['dz'])
 
 # one-shot source position (meters)
 # par['sx'] = 3000
-par['sx'] = 1000
+par['sx'] = 200
 par['dsx'] = 10.
-par['nsx'] = 500
-#par['nsx'] = 1
-#par['nsx'] = 250
+par['nsx'] = 40
 par['sz'] = 0
 
 
@@ -140,12 +138,10 @@ Plot('wedge0', fd.cgrey('''wantscalebar=y allpos=y title="Vel" color=j  screenht
 
 
 Plot('ss-9',fd.ssplot('wantscalebar=y  screenht=4.7 symbol=* plotcol=0 symbolsz=7 ',par))
-# Plot('ss-0',fd.ssplot('wantscalebar=y  screenht=4.7 symbol=* plotcol=0 symbolsz=7 ',par))
 Plot('rr', 'window j2=10 |' +
                fd.rrplot('wantscalebar=y  screenht=4.7 symbol=v plotcol=2 symbolsz=5 ',par))
 
 Result('Vel',['wedge0','ss-9','rr'],'Overlay')
-# Result('Vel',['wedge0','ss-0','rr'],'Overlay')
 
 # ------------------------------------------------------------
 # construct wavelet
@@ -164,7 +160,7 @@ Result('wav','window n2=500 |'
 for i in range(par['nsx']):
     count = str(i) # Convert integer to string
     fd.awefd('data-'+count,  # data file (all receivers)
-		     'wfld-'+count,  # wavefield snapshots
+	     'wfld-'+count,  # wavefield snapshots
              'wav',   # source wavelet
              'wedge0',  # velocity
              'Dens',  # density
@@ -176,7 +172,7 @@ for i in range(par['nsx']):
 
     # onda direta
     fd.awefd('data_direta-'+count,  # data file (all receivers)
-		     'wfld_direta-'+count,  # wavefield snapshots
+	     'wfld_direta-'+count,  # wavefield snapshots
              'wav',   # source wavelet
              'Vel_fundo',  # velocity
              'Dens',  # density
@@ -194,17 +190,12 @@ for i in range(par['nsx']):
 print datalist
 
 Flow('cube', datalist, '''cat ${SOURCES[0:%(nsx)d - 1]} d=%(dsx)g o=%(sx)g''' % par)
-
-Result('cube','cube',
-          'transp |' + fd.dgrey('title="Data cube" pclip=99 screenht=4.7',par))
-
+Result('cube', 'cube', 'transp |' + fd.dgrey('title="Data cube" pclip=99 screenht=4.7',par))
 #Plot('wfld_fundo-0', fd.wgrey('title="Wavefield" pclip=99 screenht=4.7',par))
-
 Plot('data1',
      'data-0',
      'transp | window j2=10 |' + fd.dwigl('title="Recorded data"',par))
 Result('data2','data-0', 'transp |' + fd.dgrey('title="Recorded data" pclip=99 screenht=4.7',par))
-
 Result('data_sub-0','data_sub-0', 'transp |' + fd.dgrey('title="Recorded data" pclip=99 screenht=4.7',par))
 
 

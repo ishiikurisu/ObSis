@@ -1,0 +1,52 @@
+2.0-git	sfspike	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:42 2017
+
+	o1=0
+	label1="Time"
+	data_format="native_float"
+	esize=4
+	in="/var/tmp/docs/ObSis/ex2.2/top0.rsf@"
+	unit1="s"
+	d1=10
+	n1=350
+2.0-git	sfmath	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:42 2017
+
+	input=0
+	data_format="native_float"
+	esize=4
+	in="/var/tmp/docs/ObSis/ex2.2/mid0.rsf@"
+	x1=1
+2.0-git	sfcat	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:42 2017
+
+	data_format="native_float"
+	esize=4
+	in="/var/tmp/docs/ObSis/ex2.2/wedgecoord0.rsf@"
+	n1=700
+2.0-git	sfunif2	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:42 2017
+
+	o1=0
+	d2=10
+	n2=700
+	label1="Depth"
+	n3=1
+	o2=0
+	data_format="native_float"
+	label2="Time"
+	esize=4
+	in="stdout"
+	unit2="s"
+	d1=10
+	n1=250
+	in="stdin"
+
+2.0-git	sfsmooth	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:42 2017
+
+	data_format="native_float"
+	esize=4
+	in="stdout"
+	in="stdin"
+
+2.0-git	sfdd	docs/ObSis/ex2.2:	cristiano_alves@research	Fri Jun  2 09:09:42 2017
+
+	data_format="native_float"
+	esize=4
+	in="/var/tmp/docs/ObSis/ex2.2/wedge0.rsf@"
