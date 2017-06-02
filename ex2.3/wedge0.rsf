@@ -1,4 +1,4 @@
-2.0-git	sfspike	docs/ObSis/ex2.3:	cristiano_alves@research	Fri May 26 15:03:57 2017
+2.0-git	sfspike	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:01 2017
 
 	o1=0
 	label1="Time"
@@ -8,20 +8,20 @@
 	unit1="s"
 	d1=10
 	n1=350
-2.0-git	sfmath	docs/ObSis/ex2.3:	cristiano_alves@research	Fri May 26 15:03:57 2017
+2.0-git	sfmath	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:01 2017
 
 	input=0
 	data_format="native_float"
 	esize=4
 	in="/var/tmp/docs/ObSis/ex2.3/mid0.rsf@"
 	x1=1
-2.0-git	sfcat	docs/ObSis/ex2.3:	cristiano_alves@research	Fri May 26 15:03:57 2017
+2.0-git	sfcat	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:01 2017
 
 	data_format="native_float"
 	esize=4
 	in="/var/tmp/docs/ObSis/ex2.3/wedgecoord0.rsf@"
 	n1=700
-2.0-git	sfunif2	docs/ObSis/ex2.3:	cristiano_alves@research	Fri May 26 15:03:57 2017
+2.0-git	sfunif2	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:01 2017
 
 	o1=0
 	d2=10
@@ -38,14 +38,14 @@
 	n1=250
 	in="stdin"
 
-2.0-git	sfsmooth	docs/ObSis/ex2.3:	cristiano_alves@research	Fri May 26 15:03:57 2017
+2.0-git	sfsmooth	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:01 2017
 
 	data_format="native_float"
 	esize=4
 	in="stdout"
 	in="stdin"
 
-2.0-git	sfdd	docs/ObSis/ex2.3:	cristiano_alves@research	Fri May 26 15:03:57 2017
+2.0-git	sfdd	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:01 2017
 
 	data_format="native_float"
 	esize=4
