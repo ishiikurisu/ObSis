@@ -1,4 +1,4 @@
-2.0-git	sfspike	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:03 2017
+2.0-git	sfspike	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	o1=0
 	label1="Time"
@@ -10,7 +10,7 @@
 	n1=2000
 	in="stdin"
 
-2.0-git	sfpad	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:03 2017
+2.0-git	sfpad	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	end1=2000
 	data_format="native_float"
@@ -19,14 +19,14 @@
 	n1=4000
 	in="stdin"
 
-2.0-git	sfricker1	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:03 2017
+2.0-git	sfricker1	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	data_format="native_float"
 	esize=4
 	in="stdout"
 	in="stdin"
 
-2.0-git	sfwindow	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:03 2017
+2.0-git	sfwindow	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	o1=0
 	label1="Time"
@@ -38,19 +38,19 @@
 	n1=2000
 	in="stdin"
 
-2.0-git	sfscale	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:03 2017
+2.0-git	sfscale	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	data_format="native_float"
 	esize=4
 	in="stdout"
 	in="stdin"
 
-2.0-git	sfput	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:03 2017
+2.0-git	sfput	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	data_format="native_float"
-	in="/var/tmp/docs/ObSis/ex2.3/wav_.rsf@"
+	in="/var/tmp/docs/obsis/ex2.3/wav_.rsf@"
 	label1=t
-2.0-git	sftransp	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 10:40:03 2017
+2.0-git	sftransp	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	d2=0.002
 	n2=2000
@@ -58,10 +58,10 @@
 	data_format="native_float"
 	label2="t"
 	esize=4
-	in="/var/tmp/docs/ObSis/ex2.3/wav.rsf@"
+	in="/var/tmp/docs/obsis/ex2.3/wav.rsf@"
 	unit2="s"
 	n1=1
-2.0-git	sfawefd2d	docs/ObSis/ex2.3:	cristiano_alves@research	Thu Jun  1 11:20:22 2017
+2.0-git	sfawefd2d	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:48:31 2017
 
 	d2=0.002
 	n2=2000
@@ -71,7 +71,7 @@
 	data_format="native_float"
 	label2="t"
 	esize=4
-	in="/var/tmp/docs/ObSis/ex2.3/data-31.rsf@"
+	in="/var/tmp/docs/obsis/ex2.3/data-31.rsf@"
 	unit1=""
 	unit2="s"
 	d1=10

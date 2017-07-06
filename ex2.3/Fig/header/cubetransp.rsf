@@ -104,9 +104,3 @@
 	unit2=""
 	d1=0.002
 	n1=2000
-2.0-git	sfsegyheader	ex2.3/Fig/header:	cristiano_alves@research	Thu Jul  6 16:56:49 2017
-
-	data_format="native_int"
-	esize=4
-	in="/var/tmp/ex2.3/Fig/header/header.rsf@"
-	n1=91

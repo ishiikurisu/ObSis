@@ -89,7 +89,7 @@
 	o3=200
 	esize=4
 	in="/var/tmp/docs/ObSis/ex2.3/cube.rsf@"
-2.0-git	sftransp	ex2.3/Fig/header:	cristiano_alves@research	Thu Jun  1 11:32:18 2017
+2.0-git	sftransp	ex2.3/Fig/header:	cristiano_alves@research	Thu Jul  6 16:56:45 2017
 
 	o1=0
 	d2=10
@@ -104,7 +104,7 @@
 	unit2=""
 	d1=0.002
 	n1=2000
-2.0-git	sfheaderwindow	ex2.3/Fig/header:	cristiano_alves@research	Thu Jun  1 11:32:20 2017
+2.0-git	sfheaderwindow	ex2.3/Fig/header:	cristiano_alves@research	Thu Jul  6 16:56:49 2017
 
 	n2=40
 	n3=1
@@ -113,7 +113,7 @@
 	in="stdout"
 	in="stdin"
 
-2.0-git	sfput	ex2.3/Fig/header:	cristiano_alves@research	Thu Jun  1 11:32:20 2017
+2.0-git	sfput	ex2.3/Fig/header:	cristiano_alves@research	Thu Jul  6 16:56:49 2017
 
 	unit2=m
 	label1=Time
