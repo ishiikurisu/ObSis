@@ -89,7 +89,7 @@
 	o3=200
 	esize=4
 	in="/var/tmp/docs/ObSis/ex2.2/cube.rsf@"
-2.0-git	sftransp	ex2.2/Fig/header:	cristiano_alves@research	Fri Jun  2 10:09:53 2017
+2.0-git	sftransp	ex2.2/Fig/header:	cristiano_alves@research	Thu Jul  6 17:53:09 2017
 
 	o1=0
 	d2=10
@@ -104,13 +104,13 @@
 	unit2=""
 	d1=0.002
 	n1=2000
-2.0-git	sfsegyheader	ex2.2/Fig/header:	cristiano_alves@research	Fri Jun  2 10:09:54 2017
+2.0-git	sfsegyheader	ex2.2/Fig/header:	cristiano_alves@research	Thu Jul  6 17:53:12 2017
 
 	data_format="native_int"
 	esize=4
 	in="/var/tmp/ex2.2/Fig/header/header.rsf@"
 	n1=91
-2.0-git	sfheadermath	ex2.2/Fig/header:	cristiano_alves@research	Fri Jun  2 10:09:54 2017
+2.0-git	sfheadermath	ex2.2/Fig/header:	cristiano_alves@research	Thu Jul  6 17:53:12 2017
 
 	unknown=88
 	shsca=79
@@ -212,7 +212,7 @@
 	n1=1
 	in="stdin"
 
-2.0-git	sfmask	ex2.2/Fig/header:	cristiano_alves@research	Fri Jun  2 10:09:54 2017
+2.0-git	sfmask	ex2.2/Fig/header:	cristiano_alves@research	Thu Jul  6 17:53:12 2017
 
 	data_format="native_int"
 	esize=4
