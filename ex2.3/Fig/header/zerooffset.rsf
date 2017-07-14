@@ -104,7 +104,7 @@
 	unit2=""
 	d1=0.002
 	n1=2000
-2.0-git	sfheaderwindow	ex2.3/Fig/header:	cristiano_alves@research	Thu Jul  6 16:56:49 2017
+2.0-git	sfheaderwindow	ex2.3/Fig/header:	cristiano_alves@research	Fri Jul 14 09:14:08 2017
 
 	n2=40
 	n3=1
@@ -113,12 +113,12 @@
 	in="stdout"
 	in="stdin"
 
-2.0-git	sfput	ex2.3/Fig/header:	cristiano_alves@research	Thu Jul  6 16:56:49 2017
+2.0-git	sfput	ex2.3/Fig/header:	cristiano_alves@research	Fri Jul 14 09:14:08 2017
 
 	unit2=m
 	label1=Time
 	data_format="native_float"
 	label2=Distance
 	in="/var/tmp/ex2.3/Fig/header/zerooffset.rsf@"
-	o2=1000
+	o2=200
 	unit1=s
