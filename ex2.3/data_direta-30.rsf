@@ -61,7 +61,7 @@
 	in="/var/tmp/docs/obsis/ex2.3/wav.rsf@"
 	unit2="s"
 	n1=1
-2.0-git	sfawefd2d	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:48:05 2017
+2.0-git	sfawefd2d	docs/obsis/ex2.3:	cristiano_alves@research	Thu Aug 10 10:54:21 2017
 
 	d2=0.002
 	n2=2000

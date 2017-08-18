@@ -42,9 +42,9 @@ par['ntopl1'] = (par['topl1']/par['dz'])
 
 # one-shot source position (meters)
 # par['sx'] = 3000
-par['sx'] = 200 # or 1000
-par['dsx'] = 10. # or 100
-par['nsx'] = 40 # or 1 or 10 or 100
+par['sx'] = 0 # or 1000
+par['dsx'] = 20. # or 100
+par['nsx'] = 200 # or 1 or 10 or 100
 par['sz'] = 0
 
 

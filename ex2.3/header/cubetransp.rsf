@@ -1,4 +1,4 @@
-2.0-git	sfspike	vagrant/science/ex2.3:	vagrant@precise64	Thu May 11 18:57:43 2017
+2.0-git	sfspike	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	o1=0
 	label1="Time"
@@ -10,7 +10,7 @@
 	n1=2000
 	in="stdin"
 
-2.0-git	sfpad	vagrant/science/ex2.3:	vagrant@precise64	Thu May 11 18:57:43 2017
+2.0-git	sfpad	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	end1=2000
 	data_format="native_float"
@@ -19,14 +19,14 @@
 	n1=4000
 	in="stdin"
 
-2.0-git	sfricker1	vagrant/science/ex2.3:	vagrant@precise64	Thu May 11 18:57:43 2017
+2.0-git	sfricker1	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	data_format="native_float"
 	esize=4
 	in="stdout"
 	in="stdin"
 
-2.0-git	sfwindow	vagrant/science/ex2.3:	vagrant@precise64	Thu May 11 18:57:43 2017
+2.0-git	sfwindow	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	o1=0
 	label1="Time"
@@ -38,19 +38,19 @@
 	n1=2000
 	in="stdin"
 
-2.0-git	sfscale	vagrant/science/ex2.3:	vagrant@precise64	Thu May 11 18:57:43 2017
+2.0-git	sfscale	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	data_format="native_float"
 	esize=4
 	in="stdout"
 	in="stdin"
 
-2.0-git	sfput	vagrant/science/ex2.3:	vagrant@precise64	Thu May 11 18:57:43 2017
+2.0-git	sfput	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	data_format="native_float"
-	in="/var/tmp/vagrant/science/ex2.3/sfputzA2rGt"
+	in="/var/tmp/docs/obsis/ex2.3/wav_.rsf@"
 	label1=t
-2.0-git	sftransp	vagrant/science/ex2.3:	vagrant@precise64	Thu May 11 18:57:43 2017
+2.0-git	sftransp	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	d2=0.002
 	n2=2000
@@ -58,10 +58,10 @@
 	data_format="native_float"
 	label2="t"
 	esize=4
-	in="/var/tmp/vagrant/science/ex2.3/sftranspOwu1pA"
+	in="/var/tmp/docs/obsis/ex2.3/wav.rsf@"
 	unit2="s"
 	n1=1
-2.0-git	sfawefd2d	vagrant/science/ex2.3:	vagrant@precise64	Thu May 11 19:53:22 2017
+2.0-git	sfawefd2d	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:14 2017
 
 	d2=0.002
 	n2=2000
@@ -71,25 +71,25 @@
 	data_format="native_float"
 	label2="t"
 	esize=4
-	in="/var/tmp/vagrant/science/ex2.3/sfawefd2do85wwM"
+	in="/var/tmp/docs/obsis/ex2.3/data-0.rsf@"
 	unit1=""
 	unit2="s"
 	d1=10
 	n1=700
-2.0-git	sfadd	vagrant/science/ex2.3:	vagrant@precise64	Thu May 11 20:11:50 2017
+2.0-git	sfadd	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:56:09 2017
 
 	data_format="native_float"
 	esize=4
-	in="/var/tmp/vagrant/science/ex2.3/sfaddPbu621"
-2.0-git	sfcat	vagrant/science/ex2.3:	vagrant@precise64	Thu May 11 20:11:55 2017
+	in="/var/tmp/docs/obsis/ex2.3/data_sub-0.rsf@"
+2.0-git	sfcat	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:56:11 2017
 
-	d3=200
-	n3=10
+	d3=10
+	n3=40
 	data_format="native_float"
-	o3=500
+	o3=200
 	esize=4
-	in="/var/tmp/vagrant/science/ex2.3/sfcatDtgB29"
-2.0-git	sftransp	science/ex2.3/header:	vagrant@precise64	Thu May 11 20:12:15 2017
+	in="/var/tmp/docs/obsis/ex2.3/cube.rsf@"
+2.0-git	sftransp	obsis/ex2.3/header:	cristiano_alves@research	Thu Aug 10 09:57:20 2017
 
 	o1=0
 	d2=10
@@ -99,7 +99,7 @@
 	data_format="native_float"
 	label2="r"
 	esize=4
-	in="/var/tmp/science/ex2.3/header/sftranspMo6sa0"
+	in="/var/tmp/obsis/ex2.3/header/cubetransp.rsf@"
 	unit1="s"
 	unit2=""
 	d1=0.002
