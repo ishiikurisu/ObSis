@@ -1,17 +1,17 @@
-2.0-git	sfspike	vagrant/science/ex2:	vagrant@precise64	Wed May  3 20:49:35 2017
+2.0-git	sfspike	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:12 2017
 
 	o1=0
 	label1="Time"
 	data_format="native_float"
 	esize=4
-	in="/var/tmp/vagrant/science/ex2/sfspikekCUqXK"
+	in="/var/tmp/docs/obsis/ex2.3/top0.rsf@"
 	unit1="s"
 	d1=10
 	n1=350
-2.0-git	sfmath	vagrant/science/ex2:	vagrant@precise64	Wed May  3 20:49:35 2017
+2.0-git	sfmath	docs/obsis/ex2.3:	cristiano_alves@research	Thu Jul  6 16:22:12 2017
 
 	input=0
 	data_format="native_float"
 	esize=4
-	in="/var/tmp/vagrant/science/ex2/sfmathSHQv1Q"
+	in="/var/tmp/docs/obsis/ex2.3/mid0.rsf@"
 	x1=1
