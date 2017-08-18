@@ -1,0 +1,4 @@
+env = Environment()
+env.Append(IN = 'input.unif2')
+env.Append(BIN = 'input.bin')
+env.Append(UNIF2PARAMS = 'method=spline nx=700 dx=10 nz=250 dz=10 ninf=2')
