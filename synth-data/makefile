@@ -22,7 +22,7 @@ generate-bin:
 	cat $(in) | unif2 $(unif2params) | smooth2 n1=$(n1) n2=$(n2) r1=5 r2=5 > $(bin)
 
 generate-ps: generate-bin migrate
-	psimage < $(bin) > $(ps) n1=250
+	psimage < $(bin) n1=250 > $(ps)
 	supsimage < $(kd) > $(out)
 
 generate-ray: generate-bin
