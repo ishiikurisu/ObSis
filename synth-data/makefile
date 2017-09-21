@@ -5,8 +5,8 @@ out = output.ps
 tt = table.bin
 ttps = table.ps
 ttps2 = table2.ps
-# realdata = zonoise.su
-realdata = zerooffset.su
+realdata = zonoise10.su
+#realdata = zerooffset.su
 kd = migrated.su
 n1 = 250
 n2 = 700
@@ -16,7 +16,7 @@ rayt2dparams = vfile=$(bin) tfile=$(tt) nt=2000 dt=0.002 nz=$(n1) dz=$(ds) nx=$(
 pscubeparams = n1=$(n1) d1=10 n2=$(n2) d2=10 n3=200 d3=20 clip=2
 kdparams = infile=$(realdata) ttfile=$(tt) outfile=$(kd) fzt=0 nzt=$(n1) dzt=10 fxt=0 nxt=$(n2) dxt=10 fs=0 ns=200 ds=20 dxm=20
 
-default: clean
+#default: clean
 
 generate-bin:
 	cat $(in) | unif2 $(unif2params) | smooth2 n1=$(n1) n2=$(n2) r1=5 r2=5 > $(bin)
@@ -33,6 +33,6 @@ generate-ray: generate-bin
 migrate: generate-ray
 	sukdmig2d $(kdparams)
 
-clean: generate-ps
-	rm $(bin)
-	rm $(tt)
+#clean: generate-ps
+#	rm $(bin)
+#	rm $(tt)
