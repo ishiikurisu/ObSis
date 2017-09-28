@@ -3,3 +3,4 @@ pycache/
 *.exe
 *.o
 *.a
+*.gch
