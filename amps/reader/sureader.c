@@ -2,43 +2,43 @@
 #include "stdlib.h"
 #include "./sureader.h"
 
-int life()
+int SUREADER_get_number_samples(char* header)
 {
-    return 42;
+    return (header[115] << (8*sizeof(char))) + header[114];
 }
 
-FILE* skip(FILE* fp, int how_much)
+char* SUREADER_read_header(FILE* fp)
 {
-    int i = 0;
+    char* header;
     char c;
-    for (i = 0; i < how_much; ++i)
-    {
-        fscanf(fp, "%c", &c);
-    }
-    return fp;
-}
+    int i;
 
-char* SUREADER_read_trace_header(const char* filename)
-{
-    char* header = (char*) malloc(sizeof(char) * 241);
-    FILE* fp = fopen(filename, "r");
-    int i = 0;
-    unsigned char c;
-
+    header = (char*) malloc(sizeof(char) * 240);
     for (i = 0; i < 240; ++i)
     {
         fscanf(fp, "%c", &c);
         header[i] = c;
     }
-    header[i] = '\0';
 
-    fclose(fp);
     return header;
 }
 
-int SUREADER_get_number_samples(char* header)
+char* SUREADER_read_trace(FILE* fp, char* header)
 {
-    return (header[115] << (8*sizeof(char))) + header[114];
+    char *trace;
+    int ns;
+    int i;
+    char c;
+
+    ns = SUREADER_get_number_samples(header);
+    trace = (char*) malloc(sizeof(char) * (ns+1));
+    for (i = 0; i < ns; ++i)
+    {
+        fscanf(fp, "%c", &c);
+        trace[i] = c;
+    }
+
+    return trace;
 }
 
 void SUREADER_draw_something(char* thing, int length)
@@ -54,30 +54,4 @@ void SUREADER_draw_something(char* thing, int length)
 void SUREADER_draw_header(char* header)
 {
     SUREADER_draw_something(header, 240);
-}
-
-
-char* SUREADER_read_raw_trace(const char* filename)
-{
-    char* header;
-    int ns;
-    char* trace;
-    FILE* fp;
-    int i;
-    char c;
-
-    header = SUREADER_read_trace_header(filename);
-    ns = SUREADER_get_number_samples(header);
-    trace = (char*) malloc(sizeof(char) * ns);
-    fp = fopen(filename, "r");
-    fp = skip(fp, 240);
-
-    for (i = 0; i < ns; ++i)
-    {
-        fscanf(fp, "%c", &c);
-        trace[i] = c;
-    }
-
-    free(header);
-    return trace;
 }
