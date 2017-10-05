@@ -4,39 +4,27 @@
 
 int SUREADER_get_number_samples(char* header)
 {
-    return (header[115] << (8*sizeof(char))) + header[114];
+    return (header[115] << 8) + header[114];
 }
 
 char* SUREADER_read_header(FILE* fp)
 {
     char* header;
-    char c;
-    int i;
 
     header = (char*) malloc(sizeof(char) * 240);
-    for (i = 0; i < 240; ++i)
-    {
-        fscanf(fp, "%c", &c);
-        header[i] = c;
-    }
+    fread(header, sizeof(char), 240, fp);
 
     return header;
 }
 
-char* SUREADER_read_trace(FILE* fp, char* header)
+float* SUREADER_read_trace(FILE* fp, char* header)
 {
-    char *trace;
+    float *trace;
     int ns;
-    int i;
-    char c;
 
     ns = SUREADER_get_number_samples(header);
-    trace = (char*) malloc(sizeof(char) * (ns+1));
-    for (i = 0; i < ns; ++i)
-    {
-        fscanf(fp, "%c", &c);
-        trace[i] = c;
-    }
+    trace = (float*) malloc(sizeof(float) * ns);
+    fread(trace, sizeof(float), ns, fp);
 
     return trace;
 }

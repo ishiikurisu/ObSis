@@ -7,7 +7,7 @@ int main(int argc, char const *argv[]) {
     const char test_file[] = "data/zonoise10.su";
     FILE* fp = fopen(test_file, "r");
     char* header;
-    char* trace;
+    float* trace;
     int i;
 
     printf("Let's conquer geophysics?\n");
