@@ -17,4 +17,10 @@ trace_t* SUREADER_read_header(FILE*);
 // previously read header data.
 float* SUREADER_read_trace(FILE*, trace_t*);
 
+// Creates a converted version of the given SU input file. It is a list of
+// floats, where the first float is the number of traces, the second one is the
+// number of samples in each trace. Then there are `ntr` following traces, each
+// one with `ns` float numbers.
+void SUREADER_su_to_bin(const char*, const char*);
+
 #endif
