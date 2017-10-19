@@ -2,31 +2,28 @@
 #include "stdlib.h"
 #include "reader/sureader.h"
 #include "reader/help.h"
-#include "header/suheader.h"
 
 int main(int argc, char const *argv[]) {
     const char test_file[] = "data/zonoise10.su";
     FILE* fp = fopen(test_file, "r");
-    char* header;
-    float* trace;
+    trace_t *header;
     int ns;
     long ntr;
     int i;
+    long limit = 1;
 
     printf("Let's conquer geophysics?\n");
     printf("File parameter: %s\n", test_file);
 
-    for (i = 0; i < 3; ++i)
+    for (i = 0; i < limit; ++i)
     {
         header = SUREADER_read_header(fp);
-        printf("--- # Trace #%d\n", i+1);
         ns = SUREADER_get_number_samples(header);
         ntr = SUREADER_get_number_traces(header);
-        printf("ns: %d\nntr: %ld\n", ns, ntr);
-        SUREADER_draw_header(header);
-        trace = SUREADER_read_trace(fp, header);
+        limit = (limit != ntr)? ntr : limit;
+        printf("# Header %d\nns: %d\nntr: %ld\n", i+1, ns, ntr);
+        SUREADER_read_trace(fp, header);
         free(header);
-        free(trace);
     }
 
     fclose(fp);

@@ -1,28 +1,28 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "./sureader.h"
+#include "./header/suheader.h"
 
-int SUREADER_get_number_samples(char* header)
+int SUREADER_get_number_samples(trace_t* header)
 {
-    return ((header[114] << 8) | header[115]);
+    return header->ns;
 }
 
-long SUREADER_get_number_traces(char* header)
+long SUREADER_get_number_traces(trace_t* header)
 {
-    return ~((((long) header[204]) << 24) | (((long) header[205]) << 16) | (((long) header[206]) << 8) | ((long) header[207]));
+    return header->ntr;
 }
 
-char* SUREADER_read_header(FILE* fp)
+trace_t* SUREADER_read_header(FILE* fp)
 {
-    char* header;
+    trace_t* header = (trace_t*) malloc(sizeof(trace_t));
 
-    header = (char*) malloc(sizeof(char) * 240);
-    fread(header, sizeof(char), 240, fp);
+    fread(header, 240, 1, fp);
 
     return header;
 }
 
-float* SUREADER_read_trace(FILE* fp, char* header)
+float* SUREADER_read_trace(FILE* fp, trace_t* header)
 {
     float *trace;
     int ns;
