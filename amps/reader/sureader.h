@@ -6,6 +6,9 @@
 // Gets the number of samples of a trace from a header.
 int SUREADER_get_number_samples(char*);
 
+// Gets the number of traces within a header.
+long SUREADER_get_number_traces(char*);
+
 // Executes the procedure to read the raw header data from a file pointer.
 char* SUREADER_read_header(FILE*);
 
