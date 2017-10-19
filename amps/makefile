@@ -13,6 +13,8 @@ run: compile-main
 compile-test: compile-reader
 	gcc $(test-params)
 
+plot-test: test plot
+
 compile-main: compile-reader
 	gcc $(main-params)
 
@@ -24,9 +26,13 @@ compile-header:
 	gcc reader/header/suheader.c -Wall -c -o reader/header/suheader.o
 	ar cr reader/header/suheader.a reader/header/suheader.o
 
+plot:
+	python plot.py $(WHAT)
+
 clean:
 	rm *.exe
 	rm *.o
 	rm reader/*.o
 	rm reader/*.a
 	rm reader/*.gch
+	rm data/*.bin

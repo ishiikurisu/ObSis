@@ -51,21 +51,25 @@ void SUREADER_draw_header(char* header)
 
 void SUREADER_su_to_bin(const char* input, const char* output)
 {
-    FILE* inlet = fopen(input, "r");
-    FILE* outlet = fopen(output, "w");
+    FILE* inlet = fopen(input, "rb");
+    FILE* outlet = fopen(output, "wb");
     trace_t *header;
     int ns;
     long ntr;
     int i;
     float* trace;
+    float fns;
+    float fntr;
 
     // Reading first header
     header = SUREADER_read_header(inlet);
     ns = SUREADER_get_number_samples(header);
     ntr = SUREADER_get_number_traces(header);
     trace = SUREADER_read_trace(inlet, header);
-    fprintf(outlet, "%f", (float) ntr);
-    fprintf(outlet, "%f", (float) ns);
+    fns = (float) ns;
+    fntr = (float) ntr;
+    fwrite(&fntr, sizeof(float), 1, outlet);
+    fwrite(&fns, sizeof(float), 1, outlet);
     fwrite(trace, sizeof(float), ns, outlet);
     free(header);
     free(trace);
