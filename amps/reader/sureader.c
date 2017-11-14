@@ -88,3 +88,65 @@ void SUREADER_su_to_bin(const char* input, const char* output)
     fclose(inlet);
     fclose(outlet);
 }
+
+su_t* SUREADER_new()
+{
+    su_t* su = (su_t*) malloc(sizeof(su_t));
+
+    su->ns = 0;
+    su->ntr = 0;
+    su->traces = NULL;
+
+    return su;
+}
+
+su_t* SUREADER_add_trace(su_t* su, float* trace)
+{
+    long i;
+
+    if ((su->ntr > 0) && (su->traces == NULL))
+    {
+        su->traces = (float**) malloc(su->ntr * sizeof(float*));
+        for (i = 0; i < su->ntr; ++i)
+            su->traces[i] = NULL;
+    }
+
+    for (i = 0; su->traces[i] != NULL; ++i);
+    su->traces[i] = trace;
+
+    return su;
+}
+
+su_t* SUREADER_load(const char* input)
+{
+    FILE* inlet = fopen(input, "r");
+    su_t* su = SUREADER_new();
+    trace_t* header;
+    float* trace;
+    int ns;
+    long ntr;
+    int i;
+
+    // Reading first header
+    header = SUREADER_read_header(inlet);
+    ns = SUREADER_get_number_samples(header);
+    ntr = SUREADER_get_number_traces(header);
+    trace = SUREADER_read_trace(inlet, header);
+    su->ns = ns;
+    su->ntr = ntr;
+    SUREADER_add_trace(su, trace);
+    free(header);
+
+    // Reading following headers
+    for (i = 1; i < ntr; ++i)
+    {
+        header = SUREADER_read_header(inlet);
+        ns = SUREADER_get_number_samples(header);
+        trace = SUREADER_read_trace(inlet, header);
+        SUREADER_add_trace(su, trace);
+        free(header);
+    }
+
+    fclose(inlet);
+    return su;
+}

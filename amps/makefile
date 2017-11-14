@@ -1,4 +1,4 @@
-common-params = reader/sureader.o -lm -O2 -Wall
+common-params = reader/sureader.o reader/tttreader.o -lm -O2 -Wall
 main-params = main.c $(common-params) -o main.exe
 test-params = test.c $(common-params) -o test.exe
 
@@ -8,19 +8,23 @@ test: compile-test
 	./test.exe
 
 run: compile-main
-	./main.exe data/zonoise10.su
+	./main.exe data/zonoise10.su data/zonoise10.bin
 
-compile-test: compile-reader
+compile-test: compile-sureader compile-tttreader
 	gcc $(test-params)
 
 plot-test: test plot
 
-compile-main: compile-reader
+compile-main: compile-sureader compile-tttreader
 	gcc $(main-params)
 
-compile-reader: compile-header
+compile-sureader: compile-header
 	gcc reader/sureader.c reader/header/suheader.o -Wall -c -o reader/sureader.o
 	ar cr reader/sureader.a reader/sureader.o
+
+compile-tttreader:
+	gcc reader/tttreader.c -Wall -c -o reader/tttreader.o
+	ar cr reader/tttreader.a reader/tttreader.o
 
 compile-header:
 	gcc reader/header/suheader.c -Wall -c -o reader/header/suheader.o
