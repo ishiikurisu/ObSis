@@ -10,9 +10,9 @@ int main(int argc, char const *argv[]) {
     printf("%ld\n", sizeof(su));
     free(su);
     printf("--- # Time Transit Table\n");
-    travel_t *ttt = TTTREADER_new();
-    printf("%d %d %d\n", ttt->dx, ttt->dz, ttt->dt);
-    free(ttt);
+    travel_t *ttt = TTTREADER_read("data/table.bin", 700, 250, su->ntr);
+    printf("#ttt->table = %ld (%ld)\n", sizeof(ttt->table), 700*250*su->ntr);
     printf("...\n");
+    TTTREADER_free(ttt);
     return 0;
 }

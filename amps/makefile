@@ -1,10 +1,12 @@
-common-params = reader/sureader.o reader/tttreader.o -lm -O2 -Wall
+common-params = reader/sureader.a reader/tttreader.a -lm -O2 -Wall -L$(CWPROOT)/lib -lsu -lcwp -Wall
 main-params = main.c $(common-params) -o main.exe
 test-params = test.c $(common-params) -o test.exe
 
 default: run
 
-test: compile-test
+test: run-test clean
+
+run-test: compile-test
 	./test.exe
 
 run: compile-main
@@ -23,7 +25,7 @@ compile-sureader: compile-header
 	ar cr reader/sureader.a reader/sureader.o
 
 compile-tttreader:
-	gcc reader/tttreader.c -Wall -c -o reader/tttreader.o
+	gcc reader/tttreader.c  -I$(CWPROOT)/include  -c -o reader/tttreader.o
 	ar cr reader/tttreader.a reader/tttreader.o
 
 compile-header:

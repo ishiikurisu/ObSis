@@ -9,9 +9,9 @@ Travel time table definition. Contains 4 fields:
 - table: a 3D table containing [dt][dx][dz] samples
 */
 typedef struct {
-    int dx;
-    int dz;
-    int dt;
+    int nx;
+    int nz;
+    long ntr;
     float*** table;
 } travel_t;
 
@@ -23,6 +23,11 @@ travel_t* TTTREADER_new();
 /*
 Reads the travel time from a file.
 */
-travel_t* TTTREADER_read(const char[]);
+travel_t* TTTREADER_read(const char[], int, int, long);
+
+/*
+Frees the given struct.
+*/
+void TTTREADER_free(travel_t*);
 
 #endif /* end of include guard: TTT_READER_H */
