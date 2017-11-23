@@ -4,3 +4,4 @@ pycache/
 *.o
 *.a
 *.gch
+*.db
