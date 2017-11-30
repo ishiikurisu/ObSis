@@ -150,3 +150,9 @@ su_t* SUREADER_load(const char* input)
     fclose(inlet);
     return su;
 }
+
+void SUREADER_free(su_t* su)
+{
+    free(su->traces);
+    free(su);
+}

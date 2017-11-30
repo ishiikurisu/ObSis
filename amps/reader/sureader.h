@@ -41,4 +41,7 @@ su_t* SUREADER_add_trace(su_t*, float*);
 // traces. Don't forget to `free` this pointer.
 su_t* SUREADER_load(const char*);
 
+// Frees a SU structure.
+void SUREADER_free(su_t*);
+
 #endif
