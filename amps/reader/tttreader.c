@@ -17,18 +17,10 @@ travel_t* TTTREADER_new()
     return ttt;
 }
 
-travel_t* TTTREADER_read(const char filename[], int nx, int nz, long ntr)
+travel_t* TTTREADER_alloc(int nx, int nz, long ntr)
 {
-    FILE* fp = fopen(filename, "r");
-    travel_t* ttt = TTTREADER_new();
-    long n, i, j, k;
+    travel_t *ttt = TTTREADER_new();
 
-    if (fp == NULL) {
-        printf("No file!\n");
-        abort();
-    }
-
-    // Loading table to memory
     ttt->nx = nx;
     ttt->nz = nz;
     ttt->ntr = ntr;
@@ -37,6 +29,22 @@ travel_t* TTTREADER_read(const char filename[], int nx, int nz, long ntr)
         printf("NO MORE MEMORY!\n");
         abort();
     }
+
+    return ttt;
+}
+
+travel_t* TTTREADER_read(const char filename[], int nx, int nz, long ntr)
+{
+    FILE* fp = fopen(filename, "r");
+    travel_t* ttt = TTTREADER_alloc(nx, nz, ntr);
+    long n, i, j, k;
+
+    if (fp == NULL) {
+        printf("No file!\n");
+        abort();
+    }
+
+    // Loading table to memory
     n = fread(ttt->table[0][0], sizeof(float), nx*nz*ntr, fp);
     if (n != nx*nz*ntr) {
         printf("NO MORE MEMORY!\n");

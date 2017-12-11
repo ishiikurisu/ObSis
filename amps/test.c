@@ -13,9 +13,11 @@ int main(int argc, char const *argv[]) {
     travel_t *ttt = TTTREADER_read("../../table.bin", 700, 250, su->ntr);
     printf("#ttt->table = %ld (%ld)\n", sizeof(ttt->table), 700*250*su->ntr);
     printf("--- # Middleware cube\n");
-    MIDDLE_debug(su, ttt);
+    travel_t *cube = MIDDLE_generate_middle_cube(su, ttt);
+    printf("%ld\n", sizeof(cube));
     printf("...\n");
     SUREADER_free(su);
     TTTREADER_free(ttt);
+    TTTREADER_free(cube);
     return 0;
 }
