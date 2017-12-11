@@ -21,13 +21,14 @@ travel_t* TTTREADER_read(const char filename[], int nx, int nz, long ntr)
 {
     FILE* fp = fopen(filename, "r");
     travel_t* ttt = TTTREADER_new();
-    long n;
+    long n, i, j, k;
 
     if (fp == NULL) {
         printf("No file!\n");
         abort();
     }
 
+    // Loading table to memory
     ttt->nx = nx;
     ttt->nz = nz;
     ttt->ntr = ntr;
@@ -41,6 +42,12 @@ travel_t* TTTREADER_read(const char filename[], int nx, int nz, long ntr)
         printf("NO MORE MEMORY!\n");
         abort();
     }
+
+    // Taking the return travel time into consideration
+    for (k = 0; k < nz; k++)
+        for (j = 0; j < nx; j++)
+            for (i = 0; i < ntr; i++)
+                ttt->table[i][j][k] *= 2;
 
     fclose(fp);
     return ttt;
