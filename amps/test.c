@@ -14,7 +14,7 @@ int main(int argc, char const *argv[]) {
     printf("#ttt->table = %ld (%ld)\n", sizeof(ttt->table), su->ntr);
     printf("--- # Hyperbole preview\n");
     char* outlet = "data/sample.dat";
-    MIDDLE_draw_trace_from_table(ttt, 50, 50, outlet);
+    MIDDLE_draw_trace_from_table(ttt, 0, 0, outlet);
     // DO NOT FORGET TO DRAW IT
     printf("...\n");
     SUREADER_free(su);
