@@ -10,6 +10,9 @@ test: run-test clean
 
 run-test: compile-test
 	./test.exe
+	supsimage n1=250 curve=data/sample.dat curvecolor=red npair=200 < data/zonoise10.su > data/sample.ps
+	gs -sDEVICE=jpeg -r300 -sPAPERSIZE=a4 -dBATCH -dNOPAUSE -sOutputFile=data/sample.jpg data/sample.ps
+	rm data/sample.ps
 
 run: compile-main
 	./main.exe data/zonoise10.su data/zonoise10.bin
@@ -29,13 +32,7 @@ compile-reader:
 	make -f reader/makefile
 
 plot:
-	python plot.py data/sample0.bin
-	python plot.py data/sample100.bin
-	python plot.py data/sample200.bin
-	python plot.py data/sample300.bin
-	python plot.py data/sample400.bin
-	python plot.py data/sample500.bin
-	python plot.py data/sample600.bin
+	python plot.py $(WHAT)
 
 clean:
 	rm *.exe
