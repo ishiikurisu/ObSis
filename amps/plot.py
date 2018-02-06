@@ -6,8 +6,7 @@ import struct
 def read_float(fp):
     return struct.unpack('f', fp.read(4))[0]
 
-if __name__ == '__main__':
-    fileinput = sys.argv[1]
+def draw_table(fileinput):
     fileoutput = fileinput.split('.')[0] + '.png'
     outlet = []
 
@@ -24,6 +23,10 @@ if __name__ == '__main__':
     y = np.linspace(0, 1, ntr)
     X, Y = np.meshgrid(x, y)
     Z = outlet
-    plt.contour(Y, X, Z)
+    plt.contour(X, Y, Z)
     plt.savefig(fileoutput, dpi=200)
     plt.clf()
+
+if __name__ == '__main__':
+    fileinput = sys.argv[1]
+    draw_table(fileinput)

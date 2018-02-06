@@ -13,10 +13,15 @@ int main(int argc, char const *argv[]) {
     travel_t *ttt = TTTREADER_read("../../table.bin", 700, 250, su->ntr);
     printf("#ttt->table = %ld (%ld)\n", sizeof(ttt->table), 700*250*su->ntr);
     printf("--- # Hyperbole preview\n");
-    char* samplefilename = "./data/sample.dat";
-    MIDDLE_sample_draw(samplefilename);
-    // DO NOT FORGET TO CALL ximage
-    printf("sample plot on %s\n", samplefilename);
+    char* template = "data/sample%d.bin";
+    char* outlet = (char*) malloc(sizeof(char) * 20);
+    int x = 0;
+    for (x = 0; x < ttt->nx; x += 100)
+    {
+        sprintf(outlet, template, x);
+        MIDDLE_draw_trace_from_table(ttt, x, outlet);
+    }
+    // DO NOT FORGET TO DRAW IT
     printf("...\n");
     SUREADER_free(su);
     TTTREADER_free(ttt);

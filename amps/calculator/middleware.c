@@ -7,20 +7,22 @@ void MIDDLE_debug(su_t* su, travel_t* ttt)
     printf("%ld %ld\n", sizeof(su), sizeof(ttt));
 }
 
-void MIDDLE_sample_draw(const char* output)
+void MIDDLE_draw_trace_from_table(travel_t* ttt, int X, const char* filename)
 {
-    FILE* fp = fopen(output, "wb");
-    float fs = 1.0/200.0;
-    float x = -2;
-    float x2;
-    int n = 4000;
-    int i;
+    FILE* fp = fopen(filename, "wb");
+    float Z = ttt->nz;
+    float T = ttt->ntr;
+    int z, t;
 
-    for (i = 0; i < n; i++, x += fs)
+    fwrite(&T, sizeof(float), 1, fp);
+    fwrite(&Z, sizeof(float), 1, fp);
+
+    for (z = 0; z < ttt->nz; ++z)
     {
-        x2 = x*x;
-        fwrite(&x, sizeof(float), 1, fp);
-        fwrite(&x2, sizeof(float), 1, fp);
+        for (t = 0; t < ttt->ntr; ++t)
+        {
+            fwrite(&ttt->table[t][X][z], sizeof(float), 1, fp);
+        }
     }
 
     fclose(fp);

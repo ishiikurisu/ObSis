@@ -10,7 +10,6 @@ test: run-test clean
 
 run-test: compile-test
 	./test.exe
-	psimage n1=4000 curve=./data/sample.data > ./data/sample.ps
 
 run: compile-main
 	./main.exe data/zonoise10.su data/zonoise10.bin
@@ -30,7 +29,13 @@ compile-reader:
 	make -f reader/makefile
 
 plot:
-	python plot.py $(WHAT)
+	python plot.py data/sample0.bin
+	python plot.py data/sample100.bin
+	python plot.py data/sample200.bin
+	python plot.py data/sample300.bin
+	python plot.py data/sample400.bin
+	python plot.py data/sample500.bin
+	python plot.py data/sample600.bin
 
 clean:
 	rm *.exe
