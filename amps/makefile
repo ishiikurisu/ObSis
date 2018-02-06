@@ -10,6 +10,7 @@ test: run-test clean
 
 run-test: compile-test
 	./test.exe
+	psimage n1=4000 curve=./data/sample.data > ./data/sample.ps
 
 run: compile-main
 	./main.exe data/zonoise10.su data/zonoise10.bin

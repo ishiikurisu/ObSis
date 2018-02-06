@@ -7,11 +7,21 @@ void MIDDLE_debug(su_t* su, travel_t* ttt)
     printf("%ld %ld\n", sizeof(su), sizeof(ttt));
 }
 
-travel_t* MIDDLE_generate_middle_cube(su_t* su, travel_t* ttt)
+void MIDDLE_sample_draw(const char* output)
 {
-    travel_t *cube = TTTREADER_alloc(ttt->nx, ttt->nz, ttt->ntr);
+    FILE* fp = fopen(output, "wb");
+    float fs = 1.0/200.0;
+    float x = -2;
+    float x2;
+    int n = 4000;
+    int i;
 
-    // TODO Pick amplitudes, please???
+    for (i = 0; i < n; i++, x += fs)
+    {
+        x2 = x*x;
+        fwrite(&x, sizeof(float), 1, fp);
+        fwrite(&x2, sizeof(float), 1, fp);
+    }
 
-    return cube;
+    fclose(fp);
 }

@@ -24,6 +24,6 @@ if __name__ == '__main__':
     y = np.linspace(0, 1, ntr)
     X, Y = np.meshgrid(x, y)
     Z = outlet
-    plt.contour(X, Y, Z)
+    plt.contour(Y, X, Z)
     plt.savefig(fileoutput, dpi=200)
     plt.clf()

@@ -12,12 +12,13 @@ int main(int argc, char const *argv[]) {
     printf("--- # Time Transit Table\n");
     travel_t *ttt = TTTREADER_read("../../table.bin", 700, 250, su->ntr);
     printf("#ttt->table = %ld (%ld)\n", sizeof(ttt->table), 700*250*su->ntr);
-    printf("--- # Middleware cube\n");
-    travel_t *cube = MIDDLE_generate_middle_cube(su, ttt);
-    printf("%ld\n", sizeof(cube));
+    printf("--- # Hyperbole preview\n");
+    char* samplefilename = "./data/sample.dat";
+    MIDDLE_sample_draw(samplefilename);
+    // DO NOT FORGET TO CALL ximage
+    printf("sample plot on %s\n", samplefilename);
     printf("...\n");
     SUREADER_free(su);
     TTTREADER_free(ttt);
-    TTTREADER_free(cube);
     return 0;
 }
