@@ -7,7 +7,8 @@
 
 int main(int argc, char const *argv[]) {
     printf("--- # SU Files\n");
-    su_t *su = SUREADER_load("./data/zonoise10.su");
+    printf("loading %s\n", argv[1]);
+    su_t *su = SUREADER_load(argv[1]);
     printf("%ld\n", sizeof(su));
     printf("--- # Time Transit Table\n");
     travel_t *ttt = TTTREADER_read("../../table.bin", 700, 250, su->ntr);
